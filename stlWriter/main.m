@@ -16,14 +16,11 @@
 %* ----- ----- -----
 %*     Corner&face 3D meash    
 %* ----- ----- -----
+%* the same example from stlwriter.py
 s=3.0;
 cornerPt = [0. 0. 0.; 0. 0. s; 0. s 0.; 0. s s; s 0. 0.; s 0. s; s s 0.; s s s]; %8x3
 face = [1 5 7 3; 1 5 6 2; 5 7 8 6; 7 8 4 3; 1 3 4 2; 2 6 8 4]; %6x4
-triFace = triangulateFaces(face);
-% tri3D = triangulation(face, CornerPt);
-% triplot(tri3D)
-% stlwrite(tie2,'tritext.stl','text')
-
-stlwrite('test.stl', triFace, cornerPt)
+triFace = triangulateFaces(face);       %* geom3d toolbox
+stlwrite('test.stl', triFace, cornerPt) %* stlwrite.m
 
 
